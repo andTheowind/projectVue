@@ -22,7 +22,7 @@ const showComponent = (component) => {
 <template>
   <div class="wrapper">
     <Header :activeButton="visibleComponent" @showComponent="showComponent" />
-    <Container>
+    <Container class="main-container">
       <Counter v-if="visibleComponent === 'Counter'" class="app-wrapper" />
       <Editor v-if="visibleComponent === 'Editor'" class="app-wrapper" />
       <Notes v-if="visibleComponent === 'Notes'" class="app-wrapper" />
@@ -35,7 +35,10 @@ const showComponent = (component) => {
 .wrapper {
   display: flex;
   flex-direction: row;
+}
 
+.main-container {
+  min-width: calc(100% - 221.5px);
 }
 
 .app-wrapper {
