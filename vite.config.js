@@ -4,8 +4,7 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/vite-deploy-demo/'
-
+  base: process.env.NODE_ENV === 'production' ? '/projectVue/' : '/',
 })
 
 
