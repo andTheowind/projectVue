@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app,
+.wrapper,
+.wrapper>.container {
+  height: 100%;
+}
+
+body {
+  /* background-color: #454545; */
+  /* background: radial-gradient(101.00% 100.00% at 50% 0%, rgb(32, 38, 139) 19.634%, rgb(22, 22, 22) 60.902%); */
+  /* background: linear-gradient(360deg, hsl(210, 14%, 7%) 15%, hsla(210, 100%, 30%, 0.2) 100%), hsl(210, 14%, 7%); */
+  font-family: "Manrope", sans-serif;
+}
+
+.wrapper>.container {
+  background: radial-gradient(101.00% 100.00% at 50% 0%, rgb(29, 40, 255) 18.059%, rgb(22, 22, 22) 60.902%);
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+.header {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.container>.row {
+  margin-bottom: 12px;
+}
+
+.btn-app {
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+.card {
+  padding-block: 1.5rem;
+  background-color: transparent;
+  color: #ffffff;
+  border-radius: 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  white-space: nowrap;
+  font-size: 14.5px;
+  border-radius: 15px;
+}
+
+.btn.btn-primary,
+.btn.btn-danger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn.btn-primary span,
+.btn.btn-danger span {
+  display: inline-block;
+  font-weight: 600;
+}
+
+.btn.btn-primary svg,
+.btn.btn-danger svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 7px;
+}
+
+
+.btn.btn-primary.btn-remove-all svg,
+.btn.btn-primary.btn-last-note svg {
+  width: 19px;
+  height: 19px;
+  margin-right: 5px;
+}
+
+.btn.btn-primary.btn-add-note svg {
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+}
