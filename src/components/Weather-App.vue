@@ -38,7 +38,7 @@ const getShortDayName = (date) => {
 
 const searchWeather = () => {
     weatherAppData.value.loading = true;
-    const currentWeatherFetch = fetch(`http://api.weatherapi.com/v1/current.json?key=cbbfc6fd441d4e72ae8175513241109&q=${searchQuery.value}&lang=ru`)
+    const currentWeatherFetch = fetch(`https://api.weatherapi.com/v1/current.json?key=cbbfc6fd441d4e72ae8175513241109&q=${searchQuery.value}&lang=ru`)
         .then(response => response.json())
         .then(data => {
             weatherAppData.value.location = data.location.name;
@@ -56,7 +56,7 @@ const searchWeather = () => {
             weatherAppData.value.error = true;
         });
 
-    const forecastFetch = fetch(`http://api.weatherapi.com/v1/forecast.json?key=cbbfc6fd441d4e72ae8175513241109&q=${searchQuery.value}&days=7&lang=ru`)
+    const forecastFetch = fetch(`https://api.weatherapi.com/v1/forecast.json?key=cbbfc6fd441d4e72ae8175513241109&q=${searchQuery.value}&days=7&lang=ru`)
         .then(response => response.json())
         .then(data => {
             weatherAppData.value.forecast = data.forecast.forecastday;
