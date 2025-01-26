@@ -1,6 +1,4 @@
 <script setup>
-// import { ref } from 'vue'
-
 import DFlex from './D-Flex.vue'
 import CounterButton from './sidebar-links/Counter-Button.vue'
 import EditorButton from './sidebar-links/Editor-Button.vue'
@@ -20,20 +18,13 @@ const emitShowComponent = (component) => {
     <div class="header">
         <div class="main-btns">
             <DFlex class="justify-content-start flex-column my-4 pt-2 pb-3">
-                <NotesButton :class="{ active: props.activeButton === 'Notes' }" @click="emitShowComponent('Notes')">
-                    Заметки
-                </NotesButton>
-                <EditorButton :class="{ active: props.activeButton === 'Editor' }" @click="emitShowComponent('Editor')">
-                    Редактор
-                </EditorButton>
+                <NotesButton :class="{ active: props.activeButton === 'Notes' }" @click="emitShowComponent('Notes')" />
+                <EditorButton :class="{ active: props.activeButton === 'Editor' }"
+                    @click="emitShowComponent('Editor')" />
                 <CounterButton :class="{ active: props.activeButton === 'Counter' }"
-                    @click="emitShowComponent('Counter')">
-                    Счётчик
-                </CounterButton>
+                    @click="emitShowComponent('Counter')" />
                 <WeatherButton :class="{ active: props.activeButton === 'Weather' }"
-                    @click="emitShowComponent('Weather')">
-                    Погода
-                </WeatherButton>
+                    @click="emitShowComponent('Weather')" />
             </DFlex>
         </div>
         <div class="d-flex justify-content-center align-items-center">

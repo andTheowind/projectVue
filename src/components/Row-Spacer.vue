@@ -11,5 +11,3 @@ export default {
         <div class="col-md-auto"></div>
     </div>
 </template>
-
-<style scoped></style>

@@ -1,32 +1,30 @@
 <script setup>
+import { ref, computed } from 'vue';
 
-import { ref } from 'vue'
+import SidebarLinks from './components/SidebarLinksLayout.vue';
+import Container from './components/Container-El.vue';
 
-import Header from './components/Header-Component.vue'
-import Container from './components/Container-El.vue'
-
-import Counter from './components/sidebar-main/Counter-App.vue'
-import Editor from './components/sidebar-main/Editor-App.vue'
-import Notes from './components/sidebar-main/Notes-App.vue'
-import Weather from './components/sidebar-main/Weather-App.vue'
+import Counter from './components/sidebar-main/Counter-App.vue';
+import Editor from './components/sidebar-main/Editor-App.vue';
+import Notes from './components/sidebar-main/Notes-App.vue';
+import Weather from './components/sidebar-main/Weather-App.vue';
 
 const visibleComponent = ref(null);
 
+const componentsMap = { Counter, Editor, Notes, Weather };
+
+const currentComponent = computed(() => componentsMap[visibleComponent.value]);
+
 const showComponent = (component) => {
   visibleComponent.value = component;
-  // emit('showComponent', component);
 };
-
 </script>
 
 <template>
   <div class="wrapper">
-    <Header :activeButton="visibleComponent" @showComponent="showComponent" />
+    <SidebarLinks :activeButton="visibleComponent" @showComponent="showComponent" />
     <Container class="main-container">
-      <Counter v-if="visibleComponent === 'Counter'" class="app-wrapper" />
-      <Editor v-if="visibleComponent === 'Editor'" class="app-wrapper" />
-      <Notes v-if="visibleComponent === 'Notes'" class="app-wrapper" />
-      <Weather v-if="visibleComponent === 'Weather'" class="app-wrapper" />
+      <component :is="currentComponent" v-if="currentComponent" class="app-wrapper" />
     </Container>
   </div>
 </template>
