@@ -5,10 +5,10 @@ import { ref } from 'vue'
 import Header from './components/Header-Component.vue'
 import Container from './components/Container-El.vue'
 
-import Counter from './components/Counter-App.vue'
-import Editor from './components/Editor-App.vue'
-import Notes from './components/Notes-App.vue'
-import Weather from './components/Weather-App.vue'
+import Counter from './components/sidebar-main/Counter-App.vue'
+import Editor from './components/sidebar-main/Editor-App.vue'
+import Notes from './components/sidebar-main/Notes-App.vue'
+import Weather from './components/sidebar-main/Weather-App.vue'
 
 const visibleComponent = ref(null);
 

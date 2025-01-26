@@ -2,10 +2,10 @@
 // import { ref } from 'vue'
 
 import DFlex from './D-Flex.vue'
-import CounterButton from './Counter-Button.vue'
-import EditorButton from './Editor-Button.vue'
-import NotesButton from './Notes-Button.vue'
-import WeatherButton from './Weather-Button.vue'
+import CounterButton from './sidebar-links/Counter-Button.vue'
+import EditorButton from './sidebar-links/Editor-Button.vue'
+import NotesButton from './sidebar-links/Notes-Button.vue'
+import WeatherButton from './sidebar-links/Weather-Button.vue'
 
 const emit = defineEmits(['showComponent']);
 const props = defineProps(['activeButton']);

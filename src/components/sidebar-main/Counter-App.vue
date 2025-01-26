@@ -1,8 +1,8 @@
 <script setup>
 
 import { ref } from 'vue'
-import RowSpacer from './Row-Spacer.vue'
-import CardWrapper from './Card-Wrapper.vue'
+import RowSpacer from '/src/components/Row-Spacer.vue'
+import CardWrapper from '/src/components/Card-Wrapper.vue'
 // import SvgAddButton from './SvgAddButton.vue'
 // import SvgRemoveButton from './SvgRemoveButton.vue'
 

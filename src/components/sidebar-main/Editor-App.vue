@@ -2,8 +2,8 @@
 
 import { ref } from 'vue'
 
-import RowSpacer from './Row-Spacer.vue'
-import CardWrapper from './Card-Wrapper.vue'
+import RowSpacer from '/src/components/Row-Spacer.vue'
+import CardWrapper from '/src/components/Card-Wrapper.vue'
 
 defineProps({
     msg: String,
@@ -109,10 +109,10 @@ const textToStrikethrough = () => {
                                 {{ editorAppText.btnDefault }}
                             </button>
                             <button class="btn btn-uppercase" @click="textWithUnderline">
-                                <img src="../assets/underline-img.svg" alt="">
+                                <img src="../../assets/underline-img.svg" alt="">
                             </button>
                             <button class="btn btn-lowercase" @click="textToStrikethrough">
-                                <img src="../assets/strikethrough-img.svg" alt="">
+                                <img src="../../assets/strikethrough-img.svg" alt="">
                             </button>
                         </div>
                     </div>

@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-    <button class="btn-app" @click="$emit('click')">
+    <button class="btn-app user-select-none" @click="$emit('click')">
         <slot></slot>
     </button>
 </template>

@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
-import RowEl from './Row-El.vue'
+import RowEl from '../Row-El.vue'
+
 
 const weatherAppData = ref({
     inputPlaceholder: 'Введите локацию',

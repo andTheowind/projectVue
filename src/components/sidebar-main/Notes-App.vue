@@ -1,10 +1,10 @@
 <script setup>
 
 import { ref } from 'vue'
-import RowSpacer from './Row-Spacer.vue'
-import CardWrapper from './Card-Wrapper.vue'
-import SvgAddButton from './SvgAddButton.vue'
-import SvgRemoveButton from './SvgRemoveButton.vue'
+import RowSpacer from '/src/components/Row-Spacer.vue'
+import CardWrapper from '/src/components/Card-Wrapper.vue'
+import SvgAddButton from '../SvgAddButton.vue'
+import SvgRemoveButton from '../SvgRemoveButton.vue'
 
 defineProps({
     msg: String,
@@ -85,9 +85,11 @@ const textToUpperCaseInput = () => {
     <RowSpacer>
         <CardWrapper class="card-notes">
             <!-- Заголовок приложения -->
-            <!-- <div class="notes-list-title">
+            <!-- 
+            <div class="notes-list-title">
                 {{ notesAppText.titleNotes }}
-            </div> -->
+            </div> 
+            -->
             <div class="notes-list-wrap pt-4">
                 <div class="form-control pt-4">
                     <input v-bind:placeholder="notesAppText.inputNotesPlaceholder" v-model="inputNotesValue"
@@ -137,7 +139,7 @@ const textToUpperCaseInput = () => {
                     <li class="notes-item" v-bind:key="index" v-for="(note, index) in notes">
                         <p> {{ index + 1 }}. {{ note }} </p>
                         <button class="btn btn-remove-note text-white pe-0" v-on:click="removeNote(index)">
-                            <img src="../assets/btn.-remove.svg" alt="">
+                            <img src="../../assets/btn.-remove.svg" alt="">
                             {{ notesAppText.btnRemoveThisNote }}
                         </button>
                     </li>
