@@ -3,8 +3,6 @@
 import { ref } from 'vue'
 import RowSpacer from '/src/components/Row-Spacer.vue'
 import CardWrapper from '/src/components/Card-Wrapper.vue'
-// import SvgAddButton from './SvgAddButton.vue'
-// import SvgRemoveButton from './SvgRemoveButton.vue'
 
 defineProps({
   msg: String,
@@ -15,6 +13,7 @@ const counterAppText = {
   btnCountUp: '+',
   btnCountDown: '-',
   btnCountMultiply: '5',
+  btnCountDivide: '5',
   amountCounter: 'Общее количество: ',
 }
 
@@ -28,37 +27,51 @@ const countDown = () => {
   counter.value -= 1;
 }
 
-const countMultiply = () => {
+const countMultiplyByFive = () => {
   counter.value *= 5;
 }
+
+const countDivideByFive = () => {
+  counter.value /= 5;
+}
+
 
 </script>
 
 <template>
   <RowSpacer>
     <CardWrapper class="card-counter">
-      <!-- Заголовок приложения -->
-      <!-- <p class="h3">{{ counterAppText.titleCounter }}: {{ counter }}</p> -->
       <div class="output-wrap">
         <span class="display-2 lh-0">{{ counter }}</span>
       </div>
-      <div class="btns-wrap my-2">
+      <div class="btns-wrap my-2 pb-2">
         <div class="main-btn-wrap">
           <button class="main-btn count-up" v-on:click="countUp">
-            <!-- <SvgAddButton /> -->
             {{ counterAppText.btnCountUp }}
           </button>
         </div>
         <div class="main-btn-wrap">
           <button class="main-btn count-down" v-on:click="countDown">
-            <!-- <SvgRemoveButton /> -->
             {{ counterAppText.btnCountDown }}
           </button>
         </div>
         <div class="main-btn-wrap">
-          <button class="main-btn count-multiply" v-on:click="countMultiply">
+          <button class="main-btn count-reset" v-on:click="counter = 0">
+            <span class="d-inline-block pb-1">&olarr;</span>
+          </button>
+        </div>
+      </div>
+      <div class="btns-wrap my-2 pt-2">
+        <div class="main-btn-wrap">
+          <button class="main-btn count-multiply" v-on:click="countMultiplyByFive">
             <span class="d-inline-block pb-1">&times;</span>
             {{ counterAppText.btnCountMultiply }}
+          </button>
+        </div>
+        <div class="main-btn-wrap">
+          <button class="main-btn count-multiply" v-on:click="countDivideByFive">
+            <span class="d-inline-block pb-1">&divide;</span>
+            {{ counterAppText.btnCountDivide }}
           </button>
         </div>
       </div>
@@ -80,8 +93,8 @@ const countMultiply = () => {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 35px;
+  padding-bottom: 35px;
   gap: 55px;
 }
 
@@ -96,7 +109,8 @@ const countMultiply = () => {
 
 .main-btn.count-up,
 .main-btn.count-down,
-.main-btn.count-multiply {
+.main-btn.count-multiply,
+.main-btn.count-reset {
   display: flex;
   justify-content: center;
   align-items: center;
